@@ -18,26 +18,24 @@ RSpec.describe Sufia::Admin::PermissionTemplatesController do
     end
   end
 
-  let(:form) { instance_double(Sufia::Forms::PermissionTemplateForm) }
-  before do
-    allow(Sufia::Forms::PermissionTemplateForm).to receive(:new).with(permission_template).and_return(form)
-  end
-
   context "when signed in as an admin" do
-    describe "update participants" do
+    describe "update" do
       let(:admin_set) { create(:admin_set) }
       let!(:permission_template) { Sufia::PermissionTemplate.create!(admin_set_id: admin_set.id) }
-      let(:grant_attributes) { [{ "agent_type" => "user", "agent_id" => "bob", "access" => "view" }] }
       let(:input_params) do
         { admin_set_id: admin_set.id,
-          sufia_permission_template: form_attributes }
+          sufia_permission_template: {
+            access_grants_attributes: [
+              { "agent_type" => "Person", "agent_id" => "bob", "access" => "View" }
+            ]
+          } }
       end
-      let(:form_attributes) { { visibility: 'open', access_grants_attributes: grant_attributes } }
 
       it "is successful" do
         expect(controller).to receive(:authorize!).with(:update, permission_template)
-        expect(form).to receive(:update).with(ActionController::Parameters.new(form_attributes).permit!)
-        put :update, params: input_params
+        expect do
+          put :update, params: input_params
+        end.to change { permission_template.access_grants.count }.by(1)
         expect(response).to redirect_to(sufia.edit_admin_admin_set_path(admin_set, anchor: 'participants'))
         expect(flash[:notice]).to eq 'Permissions updated'
       end
