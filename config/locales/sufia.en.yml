@@ -516,10 +516,5 @@ en:
       admin_set:
         create: 'Save'
         update: 'Save'
-      sufia_permission_template:
-        create: 'Save'
-        update: 'Save'
-      sufia_permission_template_access:
-        create: 'Add'
       create: 'Save'
       update: 'Save'
