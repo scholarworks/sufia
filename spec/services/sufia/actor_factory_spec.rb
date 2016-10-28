@@ -13,7 +13,6 @@ describe Sufia::ActorFactory, :no_clean do
                          CurationConcerns::Actors::AttachFilesActor,
                          CurationConcerns::Actors::ApplyOrderActor,
                          CurationConcerns::Actors::InterpretVisibilityActor,
-                         CurationConcerns::Actors::InitializeWorkflowActor,
                          Sufia::ApplyPermissionTemplateActor,
                          CurationConcerns::Actors::GenericWorkActor]
     end
@@ -30,7 +29,6 @@ describe Sufia::ActorFactory, :no_clean do
         CurationConcerns::Actors::AttachFilesActor,
         CurationConcerns::Actors::ApplyOrderActor,
         CurationConcerns::Actors::InterpretVisibilityActor,
-        CurationConcerns::Actors::InitializeWorkflowActor,
         Sufia::ApplyPermissionTemplateActor,
         CurationConcerns::Actors::GenericWorkActor
       ]
