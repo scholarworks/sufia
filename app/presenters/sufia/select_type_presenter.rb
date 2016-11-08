@@ -7,7 +7,11 @@ module Sufia
     attr_reader :concern
 
     def icon_class
+<<<<<<< adminset_workflows
       ModelIcon.css_class_for(concern)
+=======
+      translate('icon_class')
+>>>>>>> Add a modal when there are many types of works to select from
     end
 
     def description
