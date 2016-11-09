@@ -45,6 +45,7 @@ RSpec.describe Sufia::Forms::PermissionTemplateForm do
         expect(admin_set.reload.edit_users).to be_empty
       end
     end
+<<<<<<< adminset_workflows
 
     context "with visibility only" do
       let(:input_params) do
@@ -189,5 +190,7 @@ RSpec.describe Sufia::Forms::PermissionTemplateForm do
         expect(input_params[:release_embargo]).to be_nil
       end
     end
+=======
+>>>>>>> Grant edit access to managers of AdminSet
   end
 end
