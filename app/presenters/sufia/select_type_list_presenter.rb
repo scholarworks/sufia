@@ -1,5 +1,6 @@
 module Sufia
 <<<<<<< adminset_workflows
+<<<<<<< adminset_workflows
   # Presents the list of work type options that a user may choose from when deciding to
   # create a new work
   class SelectTypeListPresenter
@@ -12,12 +13,23 @@ module Sufia
     def initialize(classification)
       @classification = classification
 >>>>>>> Add a modal when there are many types of works to select from
+=======
+  # Presents the list of work type options that a user may choose from when deciding to
+  # create a new work
+  class SelectTypeListPresenter
+    # @param current_user [User]
+    def initialize(current_user)
+      @current_user = current_user
+>>>>>>> The 'New Work' link in the toolbar opens the modal
     end
 
     class_attribute :row_presenter
     self.row_presenter = SelectTypePresenter
 
 <<<<<<< adminset_workflows
+<<<<<<< adminset_workflows
+=======
+>>>>>>> The 'New Work' link in the toolbar opens the modal
     # @return [Boolean] are there many differnt types to choose?
     def many?
       authorized_models.size > 1
@@ -38,12 +50,17 @@ module Sufia
     end
 
     # @yieldparam [SelectTypePresenter] presenter a presenter for the item
+<<<<<<< adminset_workflows
     def each
       authorized_models.each { |model| yield row_presenter.new(model) }
 =======
     def each
       @classification.each { |i| yield row_presenter.new(i) }
 >>>>>>> Add a modal when there are many types of works to select from
+=======
+    def each
+      authorized_models.each { |model| yield row_presenter.new(model) }
+>>>>>>> The 'New Work' link in the toolbar opens the modal
     end
   end
 end

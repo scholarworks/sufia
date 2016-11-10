@@ -1,4 +1,7 @@
 <<<<<<< adminset_workflows
+<<<<<<< adminset_workflows
+=======
+>>>>>>> The 'New Work' link in the toolbar opens the modal
 <% if create_work_presenter.many? %>
   <div class="col-xs-6 col-sm-3 heading-tile">
     <%= link_to('#', data: { toggle: "modal", target: "#worktypes-to-create" }) do %>
@@ -6,6 +9,7 @@
       <%= t("sufia.dashboard.create_work") %>
     <% end %>
   </div>
+<<<<<<< adminset_workflows
 <% else %>
   <div class="col-xs-6 col-sm-3 heading-tile">
     <% create_work_presenter.first_model do |concern| %>
@@ -17,6 +21,11 @@
   <div class="col-xs-6 col-sm-3 heading-tile">
     <% classification.each do |concern| %>
 >>>>>>> Add a modal when there are many types of works to select from
+=======
+<% else %>
+  <div class="col-xs-6 col-sm-3 heading-tile">
+    <% create_work_presenter.first_model do |concern| %>
+>>>>>>> The 'New Work' link in the toolbar opens the modal
       <%= link_to(new_polymorphic_path([main_app, concern]),
                             class: "item-option contextual-quick-classify #{dom_class(concern, 'new').gsub('_', '-')}",
                             role: 'menuitem'
