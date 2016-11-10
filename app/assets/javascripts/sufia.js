@@ -54,7 +54,10 @@
 //= require almond
 //= require sufia/admin/admin_set_controls
 //= require sufia/admin/admin_set/participants
+<<<<<<< adminset_workflows
 //= require sufia/admin/admin_set/visibility
+=======
+>>>>>>> Search for a user on the AdminSet participants form
 //= require sufia/save_work
 //= require sufia/permissions
 //= require sufia/notifications
