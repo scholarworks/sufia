@@ -45,7 +45,6 @@ RSpec.describe Sufia::Forms::PermissionTemplateForm do
         expect(admin_set.reload.edit_users).to be_empty
       end
     end
-<<<<<<< adminset_workflows
 
     context "with visibility only" do
       let(:input_params) do
@@ -53,68 +52,6 @@ RSpec.describe Sufia::Forms::PermissionTemplateForm do
       end
       it "updates the visibility" do
         expect { subject }.to change { permission_template.reload.visibility }.from(nil).to('open')
-      end
-    end
-
-    context "with release 'no delay'" do
-      let(:input_params) do
-        ActionController::Parameters.new(release_period: "now").permit!
-      end
-      it "sets release_period=now" do
-        expect { subject }.to change { permission_template.reload.release_period }.from(nil).to('now')
-        expect(permission_template.release_date).to be_nil
-      end
-    end
-
-    context "with release 'varies', date specified" do
-      let(:input_params) do
-        ActionController::Parameters.new(release_period: "", release_varies: "before", release_date: "2017-01-01").permit!
-      end
-      it "sets release_period=before and release_date" do
-        expect { subject }.to change { permission_template.reload.release_period }.from(nil).to('before')
-        expect(permission_template.release_date).to eq(Date.parse("2017-01-01"))
-      end
-    end
-
-    context "with release 'varies', embargo specified" do
-      let(:input_params) do
-        ActionController::Parameters.new(release_period: "", release_varies: "embargo", release_embargo: "2yrs").permit!
-      end
-      it "sets release_period to embargo period" do
-        expect { subject }.to change { permission_template.reload.release_period }.from(nil).to('2yrs')
-        expect(permission_template.release_date).to be_nil
-      end
-    end
-
-    context "with release 'fixed', date specified" do
-      let(:input_params) do
-        ActionController::Parameters.new(release_period: "fixed", release_date: "2017-01-01").permit!
-      end
-      it "sets release_period=fixed and release_date" do
-        expect { subject }.to change { permission_template.reload.release_period }.from(nil).to('fixed')
-        expect(permission_template.release_date).to eq(Date.parse("2017-01-01"))
-      end
-    end
-
-    context "with modifying release_period from 'fixed' to 'no_delay'" do
-      let(:permission_template) { create(:permission_template, admin_set_id: admin_set.id, release_period: "fixed", release_date: "2017-01-01") }
-      let(:input_params) do
-        ActionController::Parameters.new(release_period: "now").permit!
-      end
-      it "sets release_period=now, release_date=nil" do
-        expect { subject }.to change { permission_template.reload.release_period }.from('fixed').to('now')
-        expect(permission_template.release_date).to be_nil
-      end
-    end
-
-    context "with modifying release 'varies' from date specified to embargo specified" do
-      let(:permission_template) { create(:permission_template, admin_set_id: admin_set.id, release_period: "before", release_date: "2017-01-01") }
-      let(:input_params) do
-        ActionController::Parameters.new(release_period: "", release_varies: "embargo", release_embargo: "2yrs").permit!
-      end
-      it "sets release_period to embargo period, release_date=nil" do
-        expect { subject }.to change { permission_template.reload.release_period }.from('before').to('2yrs')
-        expect(permission_template.release_date).to be_nil
       end
     end
   end
