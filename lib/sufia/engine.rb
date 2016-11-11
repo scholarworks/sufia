@@ -53,10 +53,14 @@ module Sufia
       end
 
       CurationConcerns::CurationConcern.actor_factory = Sufia::ActorFactory
+<<<<<<< adminset_workflows
       # Don't try to load this class until the application has been generated
       if defined? ::SearchBuilder
         CurationConcerns::AdminSetService.default_search_builder = Sufia::AdminSetSearchBuilder
       end
+=======
+      CurationConcerns::Workflow::WorkflowFactory.workflow_strategy = Sufia::Workflow::WorkflowByAdminSetStrategy
+>>>>>>> Clean WorkflowByAdminSetStrategy Branch
     end
 
     initializer 'sufia.assets.precompile' do |app|
