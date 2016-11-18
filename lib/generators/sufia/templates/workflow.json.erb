@@ -1,10 +1,17 @@
 {
 <<<<<<< adminset_workflows
+<<<<<<< adminset_workflows
+=======
+>>>>>>> Notifications should be sent for workflow actions. Fixes #2627.
     "workflows": [
         {
             "name": "one_step_mediated_deposit",
             "label": "One-step mediated deposit workflow",
+<<<<<<< adminset_workflows
             "description": "A single-step workflow for mediated deposit in which all deposits must be approved by a reviewer. Reviewer may also send deposits back to the depositor.",
+=======
+            "description": "A single-step workflow for mediated deposit",
+>>>>>>> Notifications should be sent for workflow actions. Fixes #2627.
             "actions": [
                 {
                     "name": "deposit",
@@ -14,6 +21,7 @@
                         {
                             "notification_type": "email",
                             "name": "Sufia::Workflow::PendingReviewNotification",
+<<<<<<< adminset_workflows
                             "to": ["approving"]
                         }
                     ],
@@ -35,6 +43,14 @@
                         "CurationConcerns::Workflow::DeactivateObject"
                     ]
                 }, {
+=======
+                            "to": ["approving"],
+                            "cc": []
+                        }
+                    ]
+                },
+                {
+>>>>>>> Notifications should be sent for workflow actions. Fixes #2627.
                     "name": "approve",
                     "from_states": [{"names": ["pending_review"], "roles": ["approving"]}],
                     "transition_to": "complete",
@@ -42,12 +58,18 @@
                         {
                             "notification_type": "email",
                             "name": "Sufia::Workflow::CompleteNotification",
+<<<<<<< adminset_workflows
                             "to": ["approving"]
+=======
+                            "to": ["approving"],
+                            "cc": []
+>>>>>>> Notifications should be sent for workflow actions. Fixes #2627.
                         }
                     ],
                     "methods": [
                         "CurationConcerns::Workflow::ActivateObject"
                     ]
+<<<<<<< adminset_workflows
                 }, {
                     "name": "request_review",
                     "from_states": [{"names": ["changes_required"], "roles": ["depositing"]}],
@@ -59,10 +81,13 @@
                             "to": ["approving"]
                         }
                     ]
+=======
+>>>>>>> Notifications should be sent for workflow actions. Fixes #2627.
                 }
             ]
         }
     ]
+<<<<<<< adminset_workflows
 =======
   "workflows": [
     {
@@ -87,4 +112,6 @@
     }
   ]
 >>>>>>> create a default mediated deposit workflow.
+=======
+>>>>>>> Notifications should be sent for workflow actions. Fixes #2627.
 }

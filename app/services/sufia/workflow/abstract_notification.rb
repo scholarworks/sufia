@@ -32,7 +32,11 @@ module Sufia
       private
 
         def users_to_notify
+<<<<<<< adminset_workflows
           recipients.fetch('to', []) + recipients.fetch('cc', [])
+=======
+          recipients[:to] + recipients[:cc]
+>>>>>>> Notifications should be sent for workflow actions. Fixes #2627.
         end
     end
   end
