@@ -19,8 +19,12 @@ RSpec.describe Sufia::Workflow::CompleteNotification do
   let(:work) { create(:generic_work, user: depositor) }
   let(:entity) { create(:sipity_entity, proxy_for_global_id: work.to_global_id.to_s) }
   let(:comment) { double("comment", comment: 'A pleasant read') }
+<<<<<<< adminset_workflows
   let(:recipients) { { to: [to_user], cc: [cc_user] } }
 >>>>>>> Notifications should be sent for workflow actions. Fixes #2627.
+=======
+  let(:recipients) { { 'to' => [to_user], 'cc' => [cc_user] } }
+>>>>>>> Use strings instead of symbols for workflow notification recipients
 
   describe ".send_notification" do
     it 'sends a message to all users' do
