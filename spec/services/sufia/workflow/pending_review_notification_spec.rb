@@ -35,6 +35,9 @@ RSpec.describe Sufia::Workflow::PendingReviewNotification do
         .and change { cc_user.mailbox.inbox.count }.by(1)
     end
 <<<<<<< adminset_workflows
+<<<<<<< adminset_workflows
+=======
+>>>>>>> Do not require CC users in workflow notifications
     context 'without carbon-copied users' do
       let(:recipients) { { 'to' => [to_user] } }
       it 'sends a message to the to user(s)' do
@@ -44,7 +47,10 @@ RSpec.describe Sufia::Workflow::PendingReviewNotification do
           .and change { to_user.mailbox.inbox.count }.by(1)
       end
     end
+<<<<<<< adminset_workflows
 =======
 >>>>>>> Notifications should be sent for workflow actions. Fixes #2627.
+=======
+>>>>>>> Do not require CC users in workflow notifications
   end
 end

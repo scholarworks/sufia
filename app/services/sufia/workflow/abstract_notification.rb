@@ -34,6 +34,7 @@ module Sufia
         def users_to_notify
 <<<<<<< adminset_workflows
 <<<<<<< adminset_workflows
+<<<<<<< adminset_workflows
           recipients.fetch('to', []) + recipients.fetch('cc', [])
 =======
           recipients[:to] + recipients[:cc]
@@ -41,6 +42,9 @@ module Sufia
 =======
           recipients['to'] + recipients['cc']
 >>>>>>> Use strings instead of symbols for workflow notification recipients
+=======
+          recipients.fetch('to', []) + recipients.fetch('cc', [])
+>>>>>>> Do not require CC users in workflow notifications
         end
     end
   end
