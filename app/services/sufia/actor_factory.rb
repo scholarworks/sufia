@@ -9,10 +9,7 @@ module Sufia
        CurationConcerns::Actors::AttachFilesActor,
        CurationConcerns::Actors::ApplyOrderActor,
        CurationConcerns::Actors::InterpretVisibilityActor,
-<<<<<<< adminset_workflows
-=======
        CurationConcerns::Actors::InitializeWorkflowActor,
->>>>>>> Remove GrantEditActor
        ApplyPermissionTemplateActor,
        model_actor(curation_concern)]
     end

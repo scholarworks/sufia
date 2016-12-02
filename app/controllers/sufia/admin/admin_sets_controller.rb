@@ -100,7 +100,7 @@ module Sufia
 
       # Find or create the permission_template object for this admin set
       def permission_template
-        PermissionTemplate.find_or_initialize_by(admin_set_id: @admin_set.id)
+        PermissionTemplate.find_or_create_by(admin_set_id: @admin_set.id)
       end
 
       def action_breadcrumb

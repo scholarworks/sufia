@@ -1,12 +1,5 @@
 # Use this file to reference specific commits of gems.
 gem 'flipflop', git: 'https://github.com/jcoyne/flipflop.git', branch: 'hydra'
-<<<<<<< adminset_workflows
-<<<<<<< adminset_workflows
-gem 'curation_concerns', git: 'https://github.com/projecthydra/curation_concerns.git', branch: 'master'
-=======
->>>>>>> Bump CC version to 1.7.0.beta1
-=======
->>>>>>> Use a released version of CC to make the build work
 
 group :development do
   gem 'better_errors'

@@ -4,10 +4,6 @@
                                   url: [sufia, :admin, @form, :permission_template] do |f| %>
                 <div class="panel-body">
                   <p><%= t('.page_description') %></p>
-<<<<<<< adminset_workflows
-<<<<<<< adminset_workflows
-=======
->>>>>>> Add Release form to AdminSet editing
                   <h3><%= t('.release.title') %></h3>
                   <p><%= t('.release.description') %></p>
                   <div id="release-no-delay" class="radio">
@@ -45,7 +41,6 @@
                     </label>
                     <%= f.date_field :release_date, wrapper: :inline, class: 'datepicker form-control' %>
                   </div>
-<<<<<<< adminset_workflows
                   <h3><%= t('.visibility.title') %></h3>
                   <p><%= t('.visibility.description') %></p>
                   <%# List each option in a <div class='radio'> tag %>
@@ -53,21 +48,6 @@
                     <%# NOTE: Bug in simple_form causes nested labels: https://github.com/plataformatec/simple_form/issues/1190 This block is a workaround. %>
                     <% b.radio_button + b.text %>
                   <% end %>
-=======
-                  <h3><%= t('.visibility.title') %></h3>
-                  <p><%= t('.visibility.description') %></p>
-                  <%# List each option in a <div class='radio'> tag %>
-                  <%= f.collection_radio_buttons :visibility, f.object.visibility_options, :first, :last, item_wrapper_tag: :div, item_wrapper_class: 'radio' %>
->>>>>>> Add visibility template to admin set form. See projecthydra-labs/hyku#419
-=======
-                  <h3><%= t('.visibility.title') %></h3>
-                  <p><%= t('.visibility.description') %></p>
-                  <%# List each option in a <div class='radio'> tag %>
-                  <%= f.collection_radio_buttons :visibility, f.object.visibility_options, :first, :last, item_wrapper_tag: :div, item_wrapper_class: 'radio' do |b| %>
-                    <%# NOTE: Bug in simple_form causes nested labels: https://github.com/plataformatec/simple_form/issues/1190 This block is a workaround. %>
-                    <% b.radio_button + b.text %>
-                  <% end %>
->>>>>>> Add Release form to AdminSet editing
                 </div>
                 <div class="panel-footer">
                   <%= link_to t('.cancel'), sufia.admin_admin_sets_path, class: 'btn btn-default pull-right'%>

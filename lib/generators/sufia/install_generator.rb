@@ -147,15 +147,7 @@ module Sufia
     end
 
     def create_workflow
-<<<<<<< adminset_workflows
-<<<<<<< adminset_workflows
       template('workflow.json.erb', "config/workflows/one_step_mediated_deposit_workflow.json")
-=======
-      template('workflow.json.erb', "config/workflows/mediated_deposit_workflow.json")
->>>>>>> create a default mediated deposit workflow.
-=======
-      template('workflow.json.erb', "config/workflows/one_step_mediated_deposit_workflow.json")
->>>>>>> Hard-code workflow_name to new one-step mediated deposit workflow. Ultimately we should allow users to select a workflow when creating/editing an admin set. Rename the workflow file to match its name.
     end
   end
 end
