@@ -52,6 +52,9 @@
 //= require sufia/flot_stats
 // Provide AMD module support
 //= require almond
+//= require sufia/admin/admin_set_controls
+//= require sufia/admin/admin_set/participants
+//= require sufia/admin/admin_set/visibility
 //= require sufia/save_work
 //= require sufia/permissions
 //= require sufia/notifications
